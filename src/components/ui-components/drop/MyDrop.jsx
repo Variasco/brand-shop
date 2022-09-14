@@ -1,36 +1,22 @@
 import { useState } from "react";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
-// import s from "./MyDrop.module.scss";
+import s from "./MyDrop.module.scss";
 
-export function MyDrop({
-  caption,
-  children,
-  on: initialOn = true,
-  addClass = "",
-  ...props
-}) {
-  // const classes = `${addClass} ${s.drop}`.trim();
-  const { on, setOn } = useState(initialOn);
+export default function MyDrop({ content, children }) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useOnClickOutside(() => setOpen(false));
 
-  function toggle() {
-    setOn((on) => !on);
+  function toggle(e) {
+    e.preventDefault();
+    setOpen(!open);
   }
-  function close() {
-    setOn(false);
-  }
-
-  const containerRef = useOnClickOutside(close);
 
   return (
-    <div
-      {...props}
-      ref={containerRef}
-      // className={classes}
-    >
-      <>{caption}</>
-      <>{children}</>
+    <div ref={containerRef}>
+      <button className={s["drop-button"]} onClick={toggle}>
+        {content}
+      </button>
+      {open && <div className={s.dropdown}>{children}</div>}
     </div>
   );
 }
-
-export default MyDrop;

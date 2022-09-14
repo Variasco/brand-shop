@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 
-export default function useOnClickOutside(onClick) {
+export default function useOnClickOutside(close) {
   const containerRef = useRef(null);
 
   useEffect(() => {
     function onClickOutside(e) {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
-        onClick();
+        close();
       }
     }
     document.addEventListener("mousedown", onClickOutside);

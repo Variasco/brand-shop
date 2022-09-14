@@ -1,10 +1,15 @@
-.drop {
+.dropdown {
   background-color: #fff;
   border-radius: 5px;
   padding: 12px 20px 20px;
   position: absolute;
   z-index: 1;
-  // display: none;
-  align-content: stretch;
   top: 43px;
+  transform: translateX(-45%);
+}
+
+.drop-button {
+  cursor: pointer;
+  background: none;
+  border: none;
 }

@@ -20,9 +20,10 @@
     border: 1px solid #ececec;
     border-left: none;
     &_text {
+      outline: none;
       padding: 10px 15px;
       font-size: 14px;
-      color: #a4a4a4;
+      color: $colorBlack;
       letter-spacing: 0.03em;
       border: none;
     }
@@ -74,6 +75,7 @@
     }
 
     &__box {
+      display: flex;
       position: relative;
       margin-right: 16px;
 

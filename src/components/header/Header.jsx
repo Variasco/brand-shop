@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MyButton from "./ui-components/button/MyButton";
-import MyDrop from "./ui-components/drop/MyDrop";
+import MyButton from "../ui-components/button/MyButton";
+import MyDrop from "../ui-components/drop/MyDrop";
 
 export const Header = () => {
   return (
     <header className="header padding-site">
       <div className="header_left">
-        <a className="logo" href="/">
+        <Link className="logo" to="/">
           <img className="logo_img" src="img/logo.png" alt="logo" />
           BRAN<span className="logo_red">D</span>
-        </a>
+        </Link>
         <details className="header_browse">
           <summary className="header_browse_summary">Browse</summary>
           <div className="drop drop_browse">
@@ -105,82 +105,81 @@ export const Header = () => {
       </div>
       <div className="header_right">
         <div className="header_cart__box">
-          <MyDrop>
-            {/* <Link to="/cart" className="header_cart_link"> */}
-            <img className="header_cart" src="img/cart.png" alt="cart" />
-            {/* </Link> */}
-            <div className="drop drop_cart">
-              <form className="drop__col">
-                <div className="header_cart__dropBox">
-                  <div className="flex">
+          <MyDrop
+            content={
+              <img className="header_cart" src="img/cart.png" alt="cart" />
+            }
+          >
+            <form className="drop__col">
+              <div className="header_cart__dropBox">
+                <div className="flex">
+                  <img
+                    src="img/dropImg1.jpg"
+                    alt="dropImg1"
+                    className="header_cart__dropImg"
+                  />
+                  <div className="header_cart_dropMidddleBox">
+                    <h3 className="header_cart__dropH3">Rebox Zane</h3>
                     <img
-                      src="img/dropImg1.jpg"
-                      alt="dropImg1"
-                      className="header_cart__dropImg"
+                      src="img/stars-cart.png"
+                      alt="stars"
+                      className="header_cart__dropStars"
                     />
-                    <div className="header_cart_dropMidddleBox">
-                      <h3 className="header_cart__dropH3">Rebox Zane</h3>
-                      <img
-                        src="img/stars-cart.png"
-                        alt="stars"
-                        className="header_cart__dropStars"
-                      />
-                      <p className="header_cart__dropText">
-                        1 <span className="header_cart__dropText_span">x</span>{" "}
-                        $250
-                      </p>
-                    </div>
+                    <p className="header_cart__dropText">
+                      1 <span className="header_cart__dropText_span">x</span>{" "}
+                      $250
+                    </p>
                   </div>
-                  <a href="#" className="header_cart__dropDelete">
-                    <img src="img/cart_del.png" alt="delete" />
-                  </a>
                 </div>
-                <div className="header_cart__dropBox">
-                  <div className="flex">
+                <a href="#" className="header_cart__dropDelete">
+                  <img src="img/cart_del.png" alt="delete" />
+                </a>
+              </div>
+              <div className="header_cart__dropBox">
+                <div className="flex">
+                  <img
+                    src="img/dropImg2.jpg"
+                    alt="dropImg1"
+                    className="header_cart__dropImg"
+                  />
+                  <div className="header_cart_dropMidddleBox">
+                    <h3 className="header_cart__dropH3">Rebox Zane</h3>
                     <img
-                      src="img/dropImg2.jpg"
-                      alt="dropImg1"
-                      className="header_cart__dropImg"
+                      src="img/stars-cart.png"
+                      alt="stars"
+                      className="header_cart__dropStars"
                     />
-                    <div className="header_cart_dropMidddleBox">
-                      <h3 className="header_cart__dropH3">Rebox Zane</h3>
-                      <img
-                        src="img/stars-cart.png"
-                        alt="stars"
-                        className="header_cart__dropStars"
-                      />
-                      <p className="header_cart__dropText">
-                        1 <span className="header_cart__dropText_span">x</span>{" "}
-                        $250
-                      </p>
-                    </div>
+                    <p className="header_cart__dropText">
+                      1 <span className="header_cart__dropText_span">x</span>{" "}
+                      $250
+                    </p>
                   </div>
-                  <a href="#" className="header_cart__dropDelete">
-                    <img src="img/cart_del.png" alt="delete" />
-                  </a>
                 </div>
-                <div className="flex margin20">
-                  <p className="header_cart__dropH3 header_cart__dropH3_size">
-                    TOTAL
-                  </p>
-                  <p className="header_cart__dropH3 header_cart__dropH3_size">
-                    $500.00
-                  </p>
-                </div>
-                <a
-                  href="checkout.html"
-                  className="header_cart__dropCheckout cart__Button_padding"
-                >
-                  checkout
+                <a href="#" className="header_cart__dropDelete">
+                  <img src="img/cart_del.png" alt="delete" />
                 </a>
-                <a
-                  href="shopingCart.html"
-                  className="cart__Button cart__Button_padding"
-                >
-                  Go to cart
-                </a>
-              </form>
-            </div>
+              </div>
+              <div className="flex margin20">
+                <p className="header_cart__dropH3 header_cart__dropH3_size">
+                  TOTAL
+                </p>
+                <p className="header_cart__dropH3 header_cart__dropH3_size">
+                  $500.00
+                </p>
+              </div>
+              <a
+                href="checkout.html"
+                className="header_cart__dropCheckout cart__Button_padding"
+              >
+                checkout
+              </a>
+              <a
+                href="shopingCart.html"
+                className="cart__Button cart__Button_padding"
+              >
+                Go to cart
+              </a>
+            </form>
           </MyDrop>
         </div>
         <Link to="/account">
